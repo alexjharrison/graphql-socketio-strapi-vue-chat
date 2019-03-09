@@ -1,0 +1,31 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "rooms",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Name": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "users": {
+      "collection": "user",
+      "via": "rooms",
+      "dominant": true,
+      "plugin": "users-permissions"
+    },
+    "posts": {
+      "collection": "post",
+      "via": "rooms"
+    }
+  }
+}

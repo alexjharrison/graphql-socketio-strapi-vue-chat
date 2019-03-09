@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "posts",
+  "info": {
+    "name": "post",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Content": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "rooms": {
+      "model": "rooms",
+      "via": "posts"
+    },
+    "author": {
+      "model": "user",
+      "via": "posts",
+      "plugin": "users-permissions"
+    }
+  }
+}
